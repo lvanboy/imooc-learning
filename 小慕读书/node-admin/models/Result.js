@@ -1,4 +1,4 @@
-const {CODE_ERROR,CODE_SUCCESS} = require('../utils/constant');
+const {CODE_ERROR,CODE_SUCCESS,CODE_TOEKN_EXPIRED} = require('../utils/constant');
 
 class Rusult{
     constructor(data,msg = "操作成功",options){
@@ -42,6 +42,10 @@ class Rusult{
     fail(res){
         this.code = CODE_ERROR;
         this.json(res)
+    }
+    expired(res){
+        this.code = CODE_TOEKN_EXPIRED;
+        this.json(res);
     }
 }
 
